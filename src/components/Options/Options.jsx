@@ -1,12 +1,12 @@
 
 
-const Options = ({onGoodClick, onNeutralClick, onBadClick}) => {
+const Options = ({onGoodClick, onNeutralClick, onBadClick, onResetClick}) => {
   return (
     <div>
-      <button onClick={handleGoodClick}>Good</button>
-      <button onClick={handleNeutralClick}>Neutral</button>
-      <button onClick={handleBadClick}>Bad</button>
-      <button onClick={handleReset}>Reset</button>
+      <button onClick={onGoodClick}>Good</button>
+      <button onClick={onNeutralClick}>Neutral</button>
+      <button onClick={onBadClick}>Bad</button>
+      <button onClick={onResetClick}>Reset</button>
     </div>
   );
 };
