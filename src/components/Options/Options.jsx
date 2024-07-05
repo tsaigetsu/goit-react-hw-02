@@ -6,7 +6,7 @@ const Options = ({onGoodClick, onNeutralClick, onBadClick, onResetClick}) => {
       <button onClick={onGoodClick}>Good</button>
       <button onClick={onNeutralClick}>Neutral</button>
       <button onClick={onBadClick}>Bad</button>
-      <button onClick={onResetClick}>Reset</button>
+      {hasFeedback && <button onClick={onResetClick}></button>}
     </div>
   );
 };

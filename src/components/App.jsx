@@ -54,7 +54,8 @@ const App = () => {
           onGoodClick={handleGoodClick}
           onNeutralClick={handleNeutralClick}
           onBadClick={handleBadCLick}
-          onResetClick={handleReset}
+        onResetClick={handleReset}
+        hasFeedback={feedback.total > 0}
         />
       <Feedback />
     </>
