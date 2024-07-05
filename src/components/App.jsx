@@ -8,11 +8,11 @@ import Options from "./Options/Options"
 const App = () => {
   
   const [feedback, setFeedback] = useState({
-        good: 0,
-        neutral: 0,
-        bad: 0,
-        total:0
-  }):
+    good: 0,
+    neutral: 0,
+    bad: 0,
+    total: 0
+  });
     
     const handleGoodClick = () => {
         setFeedback(prevFeedback => ({
