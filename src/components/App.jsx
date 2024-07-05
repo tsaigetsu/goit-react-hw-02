@@ -1,6 +1,4 @@
-import userData from "../userData.json";
-import friends from "../friends.json";
-import transactions from "../transactions.json";
+import React, { useState } from 'react';
 import Description from "./Description/Description";
 import Feedback from "./Feedback/Feedback";
 import Options from "./Options/Options"
