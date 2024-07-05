@@ -1,26 +1,66 @@
-import Profile from "./Profile/Profile";
-import FriendList from "./FriendList/FriendList";
-import TransactionHistory from "./TransactionHistory/TransactionHistory";
-
 import userData from "../userData.json";
 import friends from "../friends.json";
 import transactions from "../transactions.json";
-
+import Description from "./Description/Description";
+import Feedback from "./Feedback/Feedback";
+import Options from "./Options/Options"
 
 const App = () => {
-    return (
-        <>
-        <Profile
-            name={userData.username}
-            tag={userData.tag}
-            location={userData.location}
-            image={userData.avatar}
-            stats={userData.stats}
+  
+  const [feedback, setFeedback] = useState({
+        good: 0,
+        neutral: 0,
+        bad: 0,
+        total:0
+  }):
+    
+    const handleGoodClick = () => {
+        setFeedback(prevFeedback => ({
+            ...prevFeedback,
+            good: prevFeedback.good + 1,
+            total: prevFeedback.total +1
+        }));
+    }
+    
+    const handleNeutralClick = () => {
+        setFeedback(prevFeedback => ({
+            ...prevFeedback,
+            neutral: prevFeedback.neutral + 1,
+            total: prevFeedback.total +1
+        }));
+    }
+
+    const handleBadCLick = () => {
+        setFeedback(prevFeedback => ({
+            ...prevFeedback,
+            bad: prevFeedback.bad + 1,
+            total: prevFeedback.total +1
+        }));
+    }
+
+    const handleReset = () => {
+        setFeedback({
+            good: 0,
+            neutral: 0,
+            bad: 0,
+            total: 0
+        })
+    }
+
+    const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+  
+  return (
+    <>
+      <Description />
+        <Options
+          onGoodClick={handleGoodClick}
+          onNeutralClick={handleNeutralClick}
+          onBadClick={handleBadCLick}
+          onResetClick={handleReset}
         />
-        <FriendList friends={friends} />
-        <TransactionHistory items={transactions} />
+      <Feedback />
     </>
-    );
-};
+  );
+}
 
 export default App
