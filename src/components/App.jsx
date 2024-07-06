@@ -31,7 +31,7 @@ const App = () => {
         }));
     }
 
-    const handleBadCLick = () => {
+    const handleBadClick = () => {
         setFeedback(prevFeedback => ({
             ...prevFeedback,
             bad: prevFeedback.bad + 1,
@@ -56,11 +56,11 @@ const App = () => {
         <Options
           onGoodClick={handleGoodClick}
           onNeutralClick={handleNeutralClick}
-          onBadClick={handleBadCLick}
+          onBadClick={handleBadClick}
         onResetClick={handleReset}
         hasFeedback={totalFeedback > 0}
       />
-      {feedback.total > 0 ? (
+      {totalFeedback > 0 ? (
         <Feedback feedback={feedback} totalFeedback={totalFeedback} positivePercentage={positivePercentage} />
       ) : (
           <Notification message="Any Feedback yet" />
